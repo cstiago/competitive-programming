@@ -1,19 +1,20 @@
 #include <iostream>
 #include <string>
+ 
 using namespace std;
 typedef long long ll;
-
+ 
 const int MAXN = 8;
 const int MAXD = 2 * MAXN - 1;
-
+ 
 string tab[MAXN];
 int qs[MAXN];
 bool col[MAXN];
 bool diag1[MAXD];
 bool diag2[MAXD];
-
+ 
 int c = 0;
-
+ 
 void gen_sols(int ind) {
     if(ind == MAXN) {
         c++;
@@ -39,7 +40,7 @@ void gen_sols(int ind) {
         }
     }
 }
-
+ 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
