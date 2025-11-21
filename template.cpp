@@ -3,9 +3,6 @@ using namespace std;
 typedef long long ll;
 typedef __int128_t lll;
 
-#define loop(i_,n_) for(ll i_=0;i_<n_;i_++)
-#define each(i_,v_) for(auto& i_:v_)
-
 void solve() {
     
 }
