@@ -1,6 +1,8 @@
+#include <concepts>
+
 namespace algorithms {
 
-    template<typename T>
+    template<std::integral T>
     T gcd(T a, T b) {
         a = a >= 0 ? a : -a;
         b = b >= 0 ? b : -b;
