@@ -1,5 +1,9 @@
 *
+
 !*/
 !*.cpp
 !*.md
-!Makefile
+!/Makefile
+
+**/template.cpp
+**/Makefile
