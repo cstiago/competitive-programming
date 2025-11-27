@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
+using ld = long double;
 
 void solve() {
     
@@ -15,7 +16,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("");
+    io();
     
     int t; cin >> t; while(t--)
     solve();
