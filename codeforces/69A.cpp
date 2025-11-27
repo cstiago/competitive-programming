@@ -5,20 +5,21 @@ typedef long long ll;
 #define loop(i_,n_) for(ll i_=0;i_<n_;i_++)
 #define each(i_,v_) for(auto& i_:v_)
 
+int v[3];
+
 void solve() {
     int n;
     cin >> n;
 
-    set<pair<string, string>> sp;
-
-    loop(i, n) {
-        string s1, s2;
-        cin >> s1 >> s2;
-
-        sp.insert({s1, s2});
+    int a;
+    while(n--) {
+        loop(i, 3) {
+            cin >> a;
+            v[i]+=a;
+        }
     }
 
-    cout << sp.size() << '\n';
+    cout << (v[0] || v[1] || v[2] ? "NO" : "YES") << "\n";
 }
 
 int main() {

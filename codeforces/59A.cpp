@@ -9,18 +9,18 @@ void solve() {
     string s;
     cin >> s;
 
-    int seq = 1;
-    bool dang = 0;
-    for(int i = 1; i < s.size(); i++) {
-        if(s[i] == s[i-1]) seq++;
-        else seq = 1;
+    int l = 0;
 
-        if(seq >= 7) {
-            dang = 1;
-            break;
-        }
+    for(auto c : s) {
+        if(islower(c)) l++;
     }
-    cout << (dang ? "YES" : "NO") << "\n";
+
+    bool tol = l >= s.length() - l;
+
+    if(tol) each(i, s) i = tolower(i);
+    else each(i, s) i = toupper(i);
+
+    cout << s << "\n";
 }
 
 int main() {

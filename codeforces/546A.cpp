@@ -6,19 +6,10 @@ typedef long long ll;
 #define each(i_,v_) for(auto& i_:v_)
 
 void solve() {
-    int n;
-    cin >> n;
+    ll k, n, w;
+    cin >> k >> n >> w;
 
-    set<pair<string, string>> sp;
-
-    loop(i, n) {
-        string s1, s2;
-        cin >> s1 >> s2;
-
-        sp.insert({s1, s2});
-    }
-
-    cout << sp.size() << '\n';
+    cout << max(0LL,(k * w * (w+1) / 2) - n) << "\n";
 }
 
 int main() {

@@ -9,18 +9,11 @@ void solve() {
     string s;
     cin >> s;
 
-    int seq = 1;
-    bool dang = 0;
-    for(int i = 1; i < s.size(); i++) {
-        if(s[i] == s[i-1]) seq++;
-        else seq = 1;
+    set<char> c;
 
-        if(seq >= 7) {
-            dang = 1;
-            break;
-        }
-    }
-    cout << (dang ? "YES" : "NO") << "\n";
+    each(i, s) c.insert(i);
+
+    cout << (c.size() % 2 ? "IGNORE HIM!" : "CHAT WITH HER!") << '\n';
 }
 
 int main() {

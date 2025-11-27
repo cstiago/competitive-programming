@@ -9,16 +9,19 @@ void solve() {
     int n;
     cin >> n;
 
-    set<pair<string, string>> sp;
+    char last;
+    cin >> last;
 
-    loop(i, n) {
-        string s1, s2;
-        cin >> s1 >> s2;
+    int c = 0;
+    loop(i, n-1) {
+        char current;
+        cin >> current;
 
-        sp.insert({s1, s2});
+        if(last == current) c++;
+        last = current;
     }
 
-    cout << sp.size() << '\n';
+    cout << c << "\n";
 }
 
 int main() {

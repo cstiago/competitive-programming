@@ -9,18 +9,14 @@ void solve() {
     string s;
     cin >> s;
 
-    int seq = 1;
-    bool dang = 0;
-    for(int i = 1; i < s.size(); i++) {
-        if(s[i] == s[i-1]) seq++;
-        else seq = 1;
+    string ans;
 
-        if(seq >= 7) {
-            dang = 1;
-            break;
-        }
+    for (char c : s) {
+        c = tolower(c);
+        if(string("aeiouy").find(c)==string::npos) ans += '.', ans += c;
     }
-    cout << (dang ? "YES" : "NO") << "\n";
+
+    cout << ans << "\n";
 }
 
 int main() {

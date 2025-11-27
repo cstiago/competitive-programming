@@ -1,45 +1,34 @@
 #include <bits/stdc++.h>
-
 using namespace std;
+typedef long long ll;
+
+#define loop(i_,n_) for(ll i_=0;i_<n_;i_++)
+#define each(i_,v_) for(auto& i_:v_)
+
+void solve() {
+    int nn, cn;
+    cin >> nn >> cn;
+
+    map<string, string> m;
+
+    loop(i, nn) {
+        string s1, s2;
+        cin >> s1 >> s2;
+
+        m.insert({s2, s1});
+    }
+
+    loop(i, cn) {
+        string s1, s2;
+        cin >> s1 >> s2;
+
+        s2.erase(prev(s2.end()));
+        cout << s1 << " " << s2 << "; #" << m[s2] << "\n";
+    }
+}
 
 int main() {
-	
-	int t;
-	char s[3][3];
-	
-	cin >> t;
-	
-	while(t--) {
-		int a = 0, b = 0, c = 0;
-		
-		for(int i = 0; i < 3; i++) {
-			for(int j = 0; j < 3; j++) {
-				cin >> s[i][j];
-				
-				if(s[i][j] == 'A') {
-					a++;
-				}
-				else if(s[i][j] == 'B') {
-					b++;
-				}
-				else if(s[i][j] == 'C') {
-					c++;
-				}
-			}
-			
-			if(a == 0) {
-				cout << "A\n";
-			}
-			else if(b == 0) {
-				cout << "B\n";
-			}
-			else if(c == 0){
-				cout << "C\n";
-			}
-			
-			a = b = c = 0;
-		}
-	}
-	
-	return 0;
+    ios_base::sync_with_stdio(0); cin.tie(nullptr);
+    
+    solve();
 }

@@ -7,20 +7,15 @@ void solve() {
     int n;
     cin >> n;
 
-    bool h = false;
-
-    bool i;
-    while(n--) {
-        cin >> i;
-
-        h |= i;
+    for(int i = 0; i < n; i++) {
+        cout << "I " << (i%2 ? "love" : "hate") << " " << (i<n-1 ? "that " : "it");
     }
 
-    cout << (h ? "HARD" : "EASY") << "\n";
+    cout << "\n";
 }
 
 void fastio() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
 }
 
 void fileio(string s) {

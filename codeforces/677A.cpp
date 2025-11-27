@@ -4,19 +4,17 @@ typedef long long ll;
 typedef __int128_t lll;
 
 void solve() {
-    int n;
-    cin >> n;
+    int n, h;
+    cin >> n >> h;
 
-    bool h = false;
-
-    bool i;
+    int w = n;
+    int a;
     while(n--) {
-        cin >> i;
-
-        h |= i;
+        cin >> a;
+        if(a > h) w++;
     }
 
-    cout << (h ? "HARD" : "EASY") << "\n";
+    cout << w << "\n";
 }
 
 void fastio() {

@@ -6,21 +6,19 @@ typedef long long ll;
 #define each(i_,v_) for(auto& i_:v_)
 
 void solve() {
+    int n;
+    cin >> n;
+
     string s;
     cin >> s;
 
-    int seq = 1;
-    bool dang = 0;
-    for(int i = 1; i < s.size(); i++) {
-        if(s[i] == s[i-1]) seq++;
-        else seq = 1;
-
-        if(seq >= 7) {
-            dang = 1;
-            break;
-        }
+    int a = 0, d = 0;
+    each(i, s) {
+        if(i == 'A') a++;
+        else if(i == 'D') d++;
     }
-    cout << (dang ? "YES" : "NO") << "\n";
+
+    cout << (a == d ? "Friendship" : (a > d ? "Anton" : "Danik")) << "\n";
 }
 
 int main() {

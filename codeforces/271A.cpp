@@ -7,16 +7,20 @@ void solve() {
     int n;
     cin >> n;
 
-    bool h = false;
-
-    bool i;
-    while(n--) {
-        cin >> i;
-
-        h |= i;
+    int m;
+    set<int> s;
+    while(n++) {
+        m = n;
+        while(m){
+            s.insert(m%10);
+            m/=10;
+        }
+        if(s.size()==4) {
+            cout << n << "\n";
+            break;
+        }
+        s.clear();
     }
-
-    cout << (h ? "HARD" : "EASY") << "\n";
 }
 
 void fastio() {

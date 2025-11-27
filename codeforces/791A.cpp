@@ -6,19 +6,14 @@ typedef long long ll;
 #define each(i_,v_) for(auto& i_:v_)
 
 void solve() {
-    int n;
-    cin >> n;
-
-    set<pair<string, string>> sp;
-
-    loop(i, n) {
-        string s1, s2;
-        cin >> s1 >> s2;
-
-        sp.insert({s1, s2});
-    }
-
-    cout << sp.size() << '\n';
+    double a, b;
+    cin >> a >> b;
+    
+    double t = log(b/a)/log(3.0/2.0);
+    
+    if(t == (int) t) t += 0.5;
+    
+    cout << ceil(t) << "\n";
 }
 
 int main() {

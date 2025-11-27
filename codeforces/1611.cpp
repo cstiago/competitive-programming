@@ -6,23 +6,15 @@ typedef long long ll;
 #define each(i_,v_) for(auto& i_:v_)
 
 void solve() {
-    int n;
-    cin >> n;
+    int a, b;
+    cin >> a >> b;
 
-    set<pair<string, string>> sp;
-
-    loop(i, n) {
-        string s1, s2;
-        cin >> s1 >> s2;
-
-        sp.insert({s1, s2});
-    }
-
-    cout << sp.size() << '\n';
+    cout << min(min(a, b), (a+b)/4) << '\n';
 }
 
 int main() {
     ios_base::sync_with_stdio(0); cin.tie(nullptr);
     
+    int t; cin >> t; while(t--)
     solve();
 }

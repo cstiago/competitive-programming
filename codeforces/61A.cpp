@@ -4,23 +4,16 @@ typedef long long ll;
 typedef __int128_t lll;
 
 void solve() {
-    int n;
-    cin >> n;
+    string s1, s2;
+    cin >> s1 >> s2;
 
-    bool h = false;
+    bitset<100> b1(s1), b2(s2);
 
-    bool i;
-    while(n--) {
-        cin >> i;
-
-        h |= i;
-    }
-
-    cout << (h ? "HARD" : "EASY") << "\n";
+    cout << (b1^b2).to_string().substr(100 - s1.size(), s1.size()) << "\n";
 }
 
 void fastio() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
 }
 
 void fileio(string s) {

@@ -3,24 +3,19 @@ using namespace std;
 typedef long long ll;
 typedef __int128_t lll;
 
+bool p(string s, char c) {
+    return s.find(c) != string::npos;
+}
+
 void solve() {
-    int n;
-    cin >> n;
+    string s;
+    cin >> s;
 
-    bool h = false;
-
-    bool i;
-    while(n--) {
-        cin >> i;
-
-        h |= i;
-    }
-
-    cout << (h ? "HARD" : "EASY") << "\n";
+    cout << (p(s, 'H') | p(s, 'Q') | p(s, '9') ? "YES" : "NO") << "\n";
 }
 
 void fastio() {
-    ios_base::sync_with_stdio(0); cin.tie(0);
+    ios_base::sync_with_stdio(false); cin.tie(nullptr);
 }
 
 void fileio(string s) {

@@ -7,16 +7,10 @@ void solve() {
     int n;
     cin >> n;
 
-    bool h = false;
+    int a, b, m = 0, c = 0;
+    while(n--) cin >> a >> b, c += b-a, m = max(c, m);
 
-    bool i;
-    while(n--) {
-        cin >> i;
-
-        h |= i;
-    }
-
-    cout << (h ? "HARD" : "EASY") << "\n";
+    cout << m << "\n";
 }
 
 void fastio() {

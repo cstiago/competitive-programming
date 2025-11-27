@@ -8,19 +8,8 @@ typedef long long ll;
 void solve() {
     string s;
     cin >> s;
-
-    int seq = 1;
-    bool dang = 0;
-    for(int i = 1; i < s.size(); i++) {
-        if(s[i] == s[i-1]) seq++;
-        else seq = 1;
-
-        if(seq >= 7) {
-            dang = 1;
-            break;
-        }
-    }
-    cout << (dang ? "YES" : "NO") << "\n";
+    s[0] = toupper(s[0]);
+    cout << s << "\n";
 }
 
 int main() {

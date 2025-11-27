@@ -1,24 +1,23 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
+typedef long long ll;
+
 void solve() {
-    int x, y;
-    cin >> x >> y;
+    ll a, b, c, d;
+    cin >> a >> b >> c >> d;
     
-    cout << (x - y) / 2 << "\n";
+    cout << (min(a, c) >= min(b, d) ? "Gellyfish" : "Flower") << "\n";
     
     return;
 }
 
-void io() {
+int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(nullptr);
-}
-
-int main() {
-    io();
     
-    //int t; cin >> t; while(t--)
+    ll t; cin >> t; while(t--)
         solve();
         
     return 0;
