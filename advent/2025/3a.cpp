@@ -12,7 +12,7 @@ void solve() {
 
     while(cin >> l) {
         auto m = max_element(begin(l), end(l)-1);
-        auto n = max_element(begin(l)+distance(begin(l),m)+1, end(l));
+        auto n = max_element(m+1, end(l));
         j += ((*m)-'0')*10 + (*n)-'0';
     }
 
