@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+using ld = long double;
+
+const ll mod = 1e9+7;
+
+int v[4];
+
+void solve() {
+    int ans = 0;
+    for(int i = 0; i < 4; i++) {
+        cin >> v[i];
+        if(i>0 && v[i]>v[0]) ans++;
+    }
+    cout << ans << "\n";
+    
+}
+
+void io(const string& s = "") {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    if(s.size()) {
+        freopen((s + ".in").c_str(), "r", stdin);
+        freopen((s + ".out").c_str(), "w", stdout);
+    }
+}
+
+int main() {
+    io("");
+    
+    int t; cin >> t; while(t--)
+    solve();
+}
