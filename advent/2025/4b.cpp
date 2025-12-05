@@ -17,7 +17,7 @@ void solve() {
         v.push_back(x);
     }
 
-    int t = 0;
+    int t;
     do {
         t = 0;
         for(int i = 0; i < v.size(); i++) {
@@ -26,7 +26,7 @@ void solve() {
                     int arr = 0;
                     for(int a = -1; a <= 1; a++) {
                         for(int b = -1; b <= 1; b++) {
-                            if(0 <= i+a && i+a < v.size() && 0 <= j+b && j+b < v[i].size() && (a || b ) && v[i+a][j+b]==r) arr++;
+                            if(0 <= i+a && i+a < v.size() && 0 <= j+b && j+b < v[i].size() && (a || b) && v[i+a][j+b]==r) arr++;
                         }
                         
                     }
