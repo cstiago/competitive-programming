@@ -2,6 +2,7 @@
 
 using namespace std;
 using ll = long long;
+using ull = unsigned long long;
 using ld = long double;
 using str = string;
 
@@ -20,6 +21,10 @@ void io(const string& s = "") {
 int main() {
     io("");
     
-    int t; cin >> t; while(t--)
-    solve();
+    ull t = 1;
+    cin >> t;
+
+    while(t--) {
+        solve();
+    }
 }
