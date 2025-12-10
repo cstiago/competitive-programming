@@ -1,6 +1,6 @@
 CXX = g++
-CXXFLAGS = -Wall -Wextra -Wconversion -Winvalid-pch -O2 -std=c++23 -DLOCAL
-LDFLAGS = -static -Wl,-z,stack-size=268435456
+CXXFLAGS = -Wall -Wextra -Wconversion -Winvalid-pch -O2 -std=c++23 -DLOCAL -ggdb -fsanitize=address,undefined
+LDFLAGS = -Wl,-z,stack-size=268435456
 LDLIBS = -lstdc++exp
 
 %: %.cpp
