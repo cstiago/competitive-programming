@@ -88,7 +88,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("8b");
+    io("08b");
     ull t = 1;
     while(t--) {
         solve();

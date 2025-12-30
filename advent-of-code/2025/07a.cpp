@@ -10,31 +10,30 @@ void solve() {
     string s;
     getline(cin, s);
 
-    unordered_map<ll, ll> beams, nb;
+    unordered_set<int> beams, nb;
 
     for(int i = 0; i < s.size(); i++) {
         if(s[i] == 'S') {
-            beams[i]++;
+            beams.insert(i);
             break;
         }
     }
 
+    int t = 0;
     while(getline(cin, s)) {
-        for(auto [b, i] : beams) {
+        for(int b : beams) {
             if(b > 0 && b < s.size() && s[b] == '^') {
-                nb[b-1] += i;
-                nb[b+1] += i;
+                nb.insert(b-1);
+                nb.insert(b+1);
+                t++;
             }
             else {
-                nb[b] += i;
+                nb.insert(b);
             }
         }
         beams = move(nb);
         nb.clear();
     }
-
-    ll t = 0;
-    for(auto [b, i] : beams) t += i;
     
     cout << t << "\n";
 }
@@ -48,7 +47,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("7b");
+    io("07a");
     
     solve();
 }

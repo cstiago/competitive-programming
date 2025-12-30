@@ -7,20 +7,16 @@ using ld = long double;
 const ll mod = 1e9+7;
 
 void solve() {
-    char c;
-    int a;
-    
-    int s = 50, ans = 0;
-    while(cin >> c >> a) {
-        while(a--) {
-            s += (c == 'L' ? -1 : 1);
-            if(s < 0) s += 100;
-            s %= 100;
-            if(s == 0) ans++;
-        }
+    string l;
+    ll j = 0;
+
+    while(cin >> l) {
+        auto m = max_element(begin(l), end(l)-1);
+        auto n = max_element(m+1, end(l));
+        j += ((*m)-'0')*10 + (*n)-'0';
     }
 
-    cout << ans << "\n";
+    cout << j << "\n";
 }
 
 void io(const string& s = "") {
@@ -32,7 +28,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("1b");
+    io("03a");
     
     solve();
 }

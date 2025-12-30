@@ -55,7 +55,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("4b");
+    io("04b");
     
     solve();
 }

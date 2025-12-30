@@ -6,12 +6,16 @@ using ld = long double;
 
 const ll mod = 1e9+7;
 
-bool invalid(ll n) {
-    ll d = floor(log10(n))+1;
-    ll x = (ll)pow(10,d/2);
+bool invalid(string& s, ll z) {
+    string si = s.substr(0,z);
 
-    if((d&1)==0 && n%x == (n-(n%x))/x) return true;
-    return false;
+    for(ll i = z; i+z <= s.size(); i+=z) {
+        if(si != s.substr(i,z)) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 void solve() {
@@ -19,7 +23,13 @@ void solve() {
     char c;
     while(cin >> from >> c >> to) {
         for(ll i = from; i <= to; i++) {
-            if(invalid(i)) cnt += i;
+            string s = to_string(i);
+            for(ll j = 1; j <= to_string(i).size()/2; j++) {
+                if(s.size()%j==0 && invalid(s, j)) {
+                    cnt += i;
+                    break;
+                }
+            }
         }
 
         cin >> c;
@@ -37,7 +47,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("2a");
+    io("02b");
     
     solve();
 }

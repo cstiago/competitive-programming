@@ -12,10 +12,12 @@ void solve() {
     
     int s = 50, ans = 0;
     while(cin >> c >> a) {
-        s += (c == 'L' ? -1 : 1) * a % 100;
-        if(s < 0) s += 100;
-        s %= 100;
-        if(s == 0) ans++;
+        while(a--) {
+            s += (c == 'L' ? -1 : 1);
+            if(s < 0) s += 100;
+            s %= 100;
+            if(s == 0) ans++;
+        }
     }
 
     cout << ans << "\n";
@@ -30,7 +32,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("1a");
+    io("01b");
     
     solve();
 }

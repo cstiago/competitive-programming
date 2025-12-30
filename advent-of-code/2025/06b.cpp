@@ -61,7 +61,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("6b");
+    io("06b");
     
     solve();
 }

@@ -103,7 +103,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("8a");
+    io("08a");
     ull t = 1;
     while(t--) {
         solve();

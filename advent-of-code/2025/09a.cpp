@@ -51,7 +51,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("9a");
+    io("09a");
     ull t = 1;
     while(t--) {
         solve();

@@ -6,14 +6,26 @@ using ld = long double;
 
 const ll mod = 1e9+7;
 
+ll p(ll i) {
+    ll j = 1; i--;
+    while(i--) j*=10;
+    return j;
+}
+
+ll calc(string::iterator first, string::iterator last, ll dig, ll acc) {
+    if(dig == 0) return acc;
+
+    auto n = max_element(first, last);
+
+    return calc(n+1, last+1, dig-1, acc+p(dig)*((ll)(*n)-'0'));
+}
+
 void solve() {
     string l;
     ll j = 0;
 
     while(cin >> l) {
-        auto m = max_element(begin(l), end(l)-1);
-        auto n = max_element(m+1, end(l));
-        j += ((*m)-'0')*10 + (*n)-'0';
+        j += calc(begin(l), end(l)-11, 12, 0);
     }
 
     cout << j << "\n";
@@ -28,7 +40,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("3a");
+    io("03b");
     
     solve();
 }

@@ -27,9 +27,11 @@ void solve() {
         else w.emplace_back(v[i]);
     }
 
-    ll ans = 0;
-    for(auto [a,b] : w) {
-        ans += b - a + 1;
+    ll q, ans = 0;
+    while(cin >> q) {
+        auto search = lower_bound(w.begin(), w.end(), q, [](pair<ll, ll> interval, ll query) {return interval.first < query;});
+        if(search != w.begin()) advance(search, -1);
+        if(search != w.end() && (*search).first <= q && q <= (*search).second) ans++;
     }
 
     cout << ans << "\n";
@@ -44,7 +46,7 @@ void io(const string& s = "") {
 }
 
 int main() {
-    io("5b");
+    io("05a");
     
     solve();
 }
